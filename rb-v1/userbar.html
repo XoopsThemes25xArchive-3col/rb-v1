@@ -1,0 +1,26 @@
+<{if $xoops_isuser}>Bienvenue <b><{$xoops_uname}></b>: <a href="<{$xoops_url}>/user.php">Mon compte</a> |
+<a href="<{$xoops_url}>/edituser.php">Editer mon profil</a> | <a href="<{$xoops_url}>/notifications.php">Notifications</a> |
+ 
+<{xoManagerCount assign=pmcount}>        
+
+ <{if $pmcount}>
+        <a class="highlight" href="<{$xoops_url}>/modules/mpmanager/msgbox.php">Messagerie (<span style="color:#ff0000; font-weight: bold;"><{$pmcount}></span>)</a>
+   <{else}>
+        <a href="<{$xoops_url}>/modules/mpmanager/msgbox.php">Messagerie</a>
+      <{/if}>
+
+<{xoManager}> |
+     <a href="<{$xoops_url}>/user.php?op=logout">Déconnexion</a> |
+
+      <{if $xoops_isadmin}>
+        <a href="<{$xoops_url}>/admin.php">Admin</a>
+      <{/if}>    
+&nbsp; <{else}> <form action="<{$xoops_url}>/user.php" method="post" style="margin: 5px;">
+			<input type="hidden" name="xoops_redirect" value="<{$xoops_requesturi}>" />
+			<input type="hidden" name="op" value="login" />
+			<img src="<{$xoops_imageurl}>images/pseudo.gif" alt="Votre pseudo" title="Votre pseudo" /> <input class="formButton" type="text" name="uname" size="10"  />
+			<img src="<{$xoops_imageurl}>images/pass.gif" alt="Votre mot de passe" title="Votre mot de passe" /> <input class="formButton" type="password" name="pass" size="10"  />&nbsp;
+			<input class="formButton" type="submit" value="Go !" /> <img src="<{$xoops_imageurl}>images/inscription.gif" />
+			<a href="<{$xoops_url}>/register.php"> Créer un compte</a> | <img src="<{$xoops_imageurl}>images/lost.gif" alt="Mot de passe oublié ?" title="Mot de passe oublié ?" /> <a href="<{$xoops_url}>/user.php#lost">Mot de passe oublié ?</a>
+			</form> 
+                  <{/if}>

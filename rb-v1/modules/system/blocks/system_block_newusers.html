@@ -1,0 +1,11 @@
+<table border="0" align="center" cellspacing="1" class="outer">
+  <{foreach item=user from=$block.users}>
+    <tr class="<{cycle values="even,odd"}>" valign="middle">
+      <td align="center">
+      <{if $user.avatar != ""}>
+      <a href="<{$xoops_url}>/edituser.php?op=avatarform"><img src="<{$user.avatar}>" alt="Vous pouvez changer votre avatar ! En Cliquant ici" width="32" border="0" align="absmiddle" /></a><br />
+      <{/if}>      </td>
+      <td align="center"><a href="<{$xoops_url}>/userinfo.php?uid=<{$user.id}>" alt="Bienvenue <{$user.name}>" title="Bienvenue <{$user.name}>"><{$user.name}></a><br><a href="<{$xoops_url}>/userinfo.php?uid=<{$user.id}>" alt="Beinvenu <{$user.name}>" title="Bienvenue <{$user.name}>"><{$user.joindate}></a></td>
+    </tr>
+  <{/foreach}>
+</table>

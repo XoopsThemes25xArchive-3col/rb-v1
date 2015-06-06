@@ -1,0 +1,33 @@
+<div id="loginformular">
+	<b><font size="5">Identification</font></b>
+	<div style="padding-top: 5px;">Merci de bien entrer votre pseudo, ainsi que 
+		votre mot de passe, afin que vous puissiez se connecter sur le site.</div>
+	<fieldset style="padding: 10px;">
+  		<legend style="font-weight: bold;"><font color="#808080"><{$lang_login}></font></legend>
+  		<form action="user.php" method="post">
+    	<{$lang_username}> <br /><input type="text" name="uname" size="26" maxlength="32" value="<{$usercookie}>" /><br />
+   		<{$lang_password}><br /> <input type="password" name="pass" size="26" maxlength="32" /><input type="hidden" name="op" value="login" /><input type="hidden" name="xoops_redirect" value="<{$redirect_page}>" /><br />
+    	<input type="submit" value="<{$lang_login}>" />
+  		</form>
+  		<a name="lost"></a><div><{$lang_notregister}><br /></div>
+	</fieldset>
+	
+	<br />
+	
+	<fieldset style="padding: 10px;">
+  		<legend style="font-weight: bold;"><font color="#808080">Problèmes de connexion !</font></legend>
+		La connexion sur ce site, nécessite que votre navigateur accepte les cookies de ce dernier !
+	pour cela, veuillez effectuer <i><b><a href="<{$xoops_url}>/browser_check/">un test de compatibilité</a></b></i> .</fieldset>
+
+	<br />
+
+	<fieldset style="padding: 10px;">
+  		<legend style="font-weight: bold;"><font color="#808080"><{$lang_lostpassword}></font></legend>
+  		<div><{$lang_noproblem}></div>
+  		<form action="lostpass.php" method="post">
+    		<{$lang_youremail}> <input type="text" name="email" size="26" maxlength="60" />&nbsp;&nbsp<input type="hidden" name="op" value="mailpasswd" /><br /><input type="submit" value="Envoyer !" />
+  		</form>
+	</fieldset>
+	<br />
+	<br />
+</div>
